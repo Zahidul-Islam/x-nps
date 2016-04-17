@@ -1,0 +1,30 @@
+{
+  "name": "x-nps",
+  "version": "1.0.0",
+  "authors": [
+    "Zahidul Islam <zahidsharp@outlook.com>"
+  ],
+  "description": "A Polymer element for Net Promoter Score chart",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "z-elements",
+    "nps"
+  ],
+  "main": "z-nps.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/zahidul-islam/x-nps/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

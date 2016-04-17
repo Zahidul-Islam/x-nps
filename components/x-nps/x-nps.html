@@ -1,0 +1,74 @@
+<link rel="import" href="../polymer/polymer.html">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="xnps.js"></script>
+<!--
+An element providing a solution to no problem in particular.
+
+Example:
+
+    <x-nps id="1"></x-nps>
+
+@demo
+-->
+<dom-module id="x-nps">
+  <link rel="stylesheet" href="xnps.css">
+  <template>
+    <div id="npsChart"></div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  var defaultUrl = "http://localhost:3000/api/widget/";
+      
+  Polymer({
+
+    is: 'x-nps',
+
+    properties: {
+      height: {
+       type: String,
+       value: 400
+      },
+      width: {
+       type: String,
+       value: 600
+      },
+      title: {
+       type: String,
+       notify: true
+      },
+      dataSource: {
+        type: String,
+        notify: true
+      },
+      id: {
+        type: String
+      }
+    },
+
+    ready: function() {
+      var npsChart = this.$.npsChart;
+
+      var url = (this.dataSource || defaultUrl) + this.id;
+      console.log(url);
+
+      $.getJSON(url)
+      
+      .done(function(data){
+        renderNPS(npsChart, data);
+      })
+
+      .fail(function(){
+        renderNPS(npsChart, getDummyData());
+      });
+
+      
+      }
+    
+
+  });
+
+</script>
