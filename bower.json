@@ -4,7 +4,7 @@
   "authors": [
     "Zahidul Islam <zahidsharp@outlook.com>"
   ],
-  "description": "Net Promoter Score web component.",
+  "description": "A Polymer element for Net Promoter Score chart",
   "keywords": [
     "web-component",
     "web-components",
